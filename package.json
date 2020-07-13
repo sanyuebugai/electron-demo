@@ -1,0 +1,52 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "builder": "electron-builder",
+    "packager": "electron-packager ./ demoApp --platform=win32 --arch=x64 --out ./outApp --app-version 1.0.0 --overwrite --icon=./icon/favicon.ico"
+  },
+  "build": {
+    "appId": "demoApp",
+    "extends": null,
+    "files": [
+    ],
+    "directories": {
+      "output": "outApp" 
+    },
+    "nsis": {
+      "oneClick": false, 
+      "allowElevation": true, 
+      "allowToChangeInstallationDirectory": true, 
+      "createDesktopShortcut": true, 
+      "createStartMenuShortcut": true, 
+      "shortcutName": "demoApp",
+      "installerIcon": "./icon/favicon.ico",
+      "uninstallerIcon": "./icon/favicon.ico", 
+      "installerHeaderIcon": "./icon/favicon.ico",
+      "include": "build/installer.nsh"
+    },
+    "mac": {
+      "icon": "icon/favicon.ico"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon/favicon.ico"
+    }
+  },
+  "repository": "https://github.com/sanyuebugai/electron-demo.git",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "demo"
+  ],
+  "author": "sanyuebugai",
+  "devDependencies": {
+    "electron": "^8.2.5",
+    "electron-builder": "^22.7.0",
+    "electron-packager": "^14.2.1"
+  }
+}
