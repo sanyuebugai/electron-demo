@@ -1,4 +1,4 @@
-# electron-demo
+# electron-demo by sanyuebugai
 
 运行：
 ```bash
